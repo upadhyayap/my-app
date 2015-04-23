@@ -1,0 +1,15 @@
+<h1>users template says hello</h1>
+<div>Users: {{usersCount}}</div>
+<ul class="users-listing">
+
+ {{#each user in controller}}
+  <li>
+    {{#link-to "user" user}}
+      {{user.name}}
+    {{/link-to}}
+  </li>
+ {{else}}
+ <li class="no-users-yet">no users… :(</li>
+{{/each}}
+{{outlet}}
+</ul>

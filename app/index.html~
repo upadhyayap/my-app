@@ -11,6 +11,9 @@
 
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/my-app.css">
+    
+    <script type="text/javascript" src="ember.js"></script>
+    <script type="text/javascript" src="ember-data.js"></script>
 
     {{content-for 'head-footer'}}
   </head>

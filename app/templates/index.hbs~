@@ -1,0 +1,3 @@
+<h3>Index Template injected to Application tempate</h3>
+{{#link-to "users"}} Go to the users page {{/link-to}}
+    {{outlet}}

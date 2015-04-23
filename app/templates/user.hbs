@@ -1,0 +1,11 @@
+<h1>User template is injected in users template</h1>
+<div class="user-profile">
+  <img {{bind-attr src="model.avatarUrl"}} alt="User's avatar"/>
+  <h2>{{model.name}}</h2>
+  <span>{{model.email}}</span>
+  <p>{{model.bio}}</p>
+  <span>Created {{model.creationDate}}</span>
+  <button {{action "edit"}}>Edit</button>
+{{outlet}}
+</div>
+
