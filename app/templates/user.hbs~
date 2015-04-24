@@ -6,5 +6,7 @@
   <p>{{model.bio}}</p>
   <span>Created {{model.creationDate}}</span>
   <button {{action "edit"}}>Edit</button>
+{{debugger}}
 </div>
 {{outlet}}
+
