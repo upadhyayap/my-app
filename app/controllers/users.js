@@ -5,6 +5,7 @@ export default Ember.ArrayController.extend({
   sortAscending: true,
   
   usersCount: function(){
+   Ember.Logger.log('count lenth called');
     return this.get('model.length');
   }.property('@each')
 
