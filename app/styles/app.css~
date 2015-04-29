@@ -1,0 +1,651 @@
+.confirm-box {
+    @include box-sizing(border-box);
+    padding:7px; 
+    position:absolute; top:0px; left:50%; margin-left:-63px;
+    background:white; 
+    border-radius:3px; 
+    border:1px solid #ddd;
+    
+    h4 {
+        display:inline-block;
+        margin:0 2px 0 0;
+        color:#666; line-height:11px; font-size:11px; 
+    }
+    button { font-size:11px; }
+}
+
+.confirmin { @include animation(confirmin .4s ease both); }
+@-webkit-keyframes confirmin { 
+    from { opacity:0; -webkit-transform: translateZ(-10px) translateY(-15px) scale(.8); } 
+    50%  { opacity:1; -webkit-transform: translateZ(  0px) translateY(-40px) scale(1); } 
+    to   { opacity:1; -webkit-transform: translateZ(  0px) translateY(-20px) scale(1); } 
+}
+@-moz-keyframes confirmin { 
+    from { -moz-opacity:0; -moz-transform: translateZ(-10px) translateY(-0px) scale(.8); } 
+    50%  { -moz-opacity:1; -moz-transform: translateZ(  0px) translateY(-50px) scale(1); } 
+    to   { -moz-opacity:1; -moz-transform: translateZ(  0px) translateY(-15px) scale(1); } 
+}
+
+
+/* 
+ * A collection of css animations stored in class names 
+ * so you can easely addClass/removeClass them on any HTML elements 
+*/
+
+
+.flipin { @include animation(flipin 1s ease both); }
+@-webkit-keyframes flipin { 
+    from { -webkit-transform: rotateX(180deg); }
+    to   { -webkit-transform: rotateX(0deg); } 
+}
+@-moz-keyframes flipin { 
+    from { -moz-transform: rotateX(180deg); }
+    to   { -moz-transform: rotateX(0deg); } 
+}
+
+.scaleout { @include animation(scaleout .8s ease both); }
+@-webkit-keyframes scaleout { 
+    from { -webkit-transform: translateZ(0px) translateX(0px) scale(1); } 
+    50%  { -webkit-transform: translateZ(-10px) translateX(-170px) scale(.95); } 
+    to   { -webkit-transform: translateZ(-10px) translateX( -130px) scale(.95); } 
+}
+@-moz-keyframes scaleout { 
+    from { -moz-transform: translateZ(0px) translateX(0px) scale(1); } 
+    50%  { -moz-transform: translateZ(-10px) translateX(-170px) scale(.95); } 
+    to   { -moz-transform: translateZ(-10px) translateX( -130px) scale(.95); } 
+}
+
+.hidden { @include animation(hidden 1s ease both); }
+@-webkit-keyframes hidden { 
+    from { opacity:1; } 
+    to   { opacity:0; } 
+}
+@-moz-keyframes hidden { 
+    from { -moz-opacity:1; } 
+    to   { -moz-opacity:0; } 
+}
+
+.shown { @include animation(shown 1s ease both); }
+@-webkit-keyframes shown { 
+    from { opacity:0; -webkit-transform: translateZ(-10px) translateX(0px) scale(.95); } 
+    50%  { opacity:1; -webkit-transform: translateZ(0px) translateX(100px) scale(1); } 
+    to   { opacity:1; -webkit-transform: translateZ(0px) translateX(50px) scale(1); } 
+}
+@-moz-keyframes shown { 
+    from { -moz-opacity:0; -moz-transform: translateZ(-10px) translateX(0px) scale(.95); } 
+    50%  { -moz-opacity:1; -moz-transform: translateZ(0px) translateX(100px) scale(1); } 
+    to   { -moz-opacity:1; -moz-transform: translateZ(0px) translateX(0px) scale(1); } 
+}
+
+// fadein
+.fadein { @include animation(fadein .5s ease); }
+@-webkit-keyframes fadein { 
+    from { opacity:0; } 
+    to   { opacity:1; } 
+}
+@-moz-keyframes fadein { 
+    from { -moz-opacity:0; } 
+    to   { -moz-opacity:1; } 
+}
+
+// Daniel Eden's Hinge animation from https://github.com/daneden/animate.css
+.hinge, .delete-animation { -webkit-animation-name:hinge; -moz-animation-name:hinge; animation-name:hinge; }
+@-webkit-keyframes hinge { 0% { -webkit-transform:rotate(0); -webkit-transform-origin:top left; -webkit-animation-timing-function:ease-in-out; }
+    20%, 60% { -webkit-transform:rotate(80deg); -webkit-transform-origin:top left; -webkit-animation-timing-function:ease-in-out; }
+    40% { -webkit-transform:rotate(60deg); -webkit-transform-origin:top left; -webkit-animation-timing-function:ease-in-out; }
+    80% { -webkit-transform:rotate(60deg) translateY(0); opacity:1; -webkit-transform-origin:top left; -webkit-animation-timing-function:ease-in-out; }
+    100% { -webkit-transform:translateY(700px); opacity:0; }
+}
+@-moz-keyframes hinge { 0% { -moz-transform:rotate(0); -moz-transform-origin:top left; -moz-animation-timing-function:ease-in-out; }
+    20%, 60% { -moz-transform:rotate(80deg); -moz-transform-origin:top left; -moz-animation-timing-function:ease-in-out; }
+    40% { -moz-transform:rotate(60deg); -moz-transform-origin:top left; -moz-animation-timing-function:ease-in-out; }
+    80% { -moz-transform:rotate(60deg) translateY(0); opacity:1; -moz-transform-origin:top left; -moz-animation-timing-function:ease-in-out; }
+    100% { -moz-transform:translateY(700px); opacity:0; }
+}
+@keyframes hinge { 0% { transform:rotate(0); transform-origin:top left; animation-timing-function:ease-in-out; }
+    20%, 60% { transform:rotate(80deg); transform-origin:top left; animation-timing-function:ease-in-out; }
+    40% { transform:rotate(60deg); transform-origin:top left; animation-timing-function:ease-in-out; }
+    80% { transform:rotate(60deg) translateY(0); opacity:1; transform-origin:top left; animation-timing-function:ease-in-out; }
+    100% { transform:translateY(700px); opacity:0; }
+}
+
+
+
+// delete-animation (override of the desktop version)
+.delete-animation { @include animation(delete-animation .3s ease both); }
+@-webkit-keyframes delete-animation {
+    from { -webkit-transform:translate3d(-100%,0,0); }
+    to   { -webkit-transform:translate3d(0%,0,0); }
+}
+@-moz-keyframes delete-animation {
+    from { -webkit-transform:translate3d(-100%,0,0); }
+    to   { -moz-transform:translate3d(0%,0,0); }
+}
+@-ms-keyframes delete-animation {
+    from { -webkit-transform:translate3d(-100%,0,0); }
+    to   { -ms-transform:translate3d(0%,0,0); }
+}
+@keyframes delete-animation {
+    from { -webkit-transform:translate3d(-100%,0,0); }
+    to   { transform:translate3d(0%,0,0); }
+}
+
+// reset any transition or animation set on an element
+.drag { 
+    @include animation(none);
+    @include transition(none);
+}
+
+
+// buttons 
+// ------------------------------------ \
+button, .button {
+    display:inline-block; width:auto; 
+    box-shadow:none; box-shadow:0 1px 1px rgba(0,0,0,.3); 
+    padding:4px 12px; text-decoration:none; color:#666;
+    border-radius:3px; 
+}
+
+@mixin buttonColorz($colorScheme) {
+    color:white; 
+    text-shadow:0 1px 0 darken($colorScheme,20%);
+    border:1px solid $colorScheme;
+    @include linear-gradient(lighten($colorScheme,4%), darken($colorScheme,2%)); 
+    @content;
+    &:hover { background:$colorScheme; }
+    &:active, &.active { background:$colorScheme; box-shadow:inset 0 1px 1px rgba(0,0,0,.2); }
+}
+button, .gray   { @include buttonColorz($gray){ color:#666; text-shadow:0 1px 0 white; } }
+.blue, button.active, .button.active { @include buttonColorz($blue); }
+.delete, button.red.active  { @include buttonColorz($red); }
+
+
+
+// structure 
+$mainColWidth: 550px; 
+$mainColHeight: 400px; 
+
+.border-box { 
+    @include box-sizing(border-box); 
+}
+.main { 
+    @extend .border-box; 
+    position:relative; 
+    margin:50px auto; 
+    width:$mainColWidth; 
+    -webkit-perspective:2500px; 
+       -moz-perspective:2500px; 
+}
+
+.users-listing { 
+    @extend .border-box; 
+    width:$mainColWidth/2; 
+    max-height:$mainColHeight; 
+    overflow:auto; 
+}
+
+.user-pane { 
+    @extend .border-box; 
+    width:$mainColWidth/2 + 15; // + 15 pixels to make it overlaps the users-listing
+    height:$mainColHeight; 
+    -webkit-transform-style:preserve-3d; 
+    -moz-transform-style:preserve-3d;
+    @include transform(rotateY(0deg));
+    position:absolute; top:0; right:0; 
+}
+
+
+// user list styles
+.users-listing { 
+    height:280px;
+    position:relative; margin-top:5px; 
+    border:4px solid rgba(0,0,0,.5); 
+    background:rgb(50,50,50); 
+    border-radius:4px; 
+    padding:0; list-style:none; 
+
+    li a { 
+        display:block; padding:15px 20px; 
+        text-decoration:none; color:#eee; 
+        &.active { background-color:#000; }
+    }
+    li.no-users-yet {
+        margin:80px;
+        color:#555; font-size:18px;
+        text-shadow:0px -1px 0px #000;
+    }
+}
+.create-btn { 
+    padding:4px 5px;
+    position:static; top:-18px; left:0;
+    > span { position:absolute; color:black; font-size:11px; text-shadow:none; left:30px; }
+}
+.users-count { position:absolute; top:7px; left:200px; }
+
+.pane { 
+    @extend .border-box; 
+   //box-shadow:0 0 5px rgba(0,0,0,.3); 
+   -webkit-transform-style:preserve-3d; 
+      -moz-transform-style:preserve-3d; 
+   background:white; border-radius:3px; 
+   border:1px solid #ccc; 
+
+   // 3d faces 
+   $faceLength: 6px; 
+   [class*="face-"] { 
+       position:absolute; background-color:rgba(0,0,0,.3); 
+   }
+   .face-left, .face-right { top:0; bottom:0; width:$faceLength; @include transform(translateZ(-$faceLength/2) rotateY(90deg)); }
+   .face-left  { left:-$faceLength/2; }
+   .face-right { right:-$faceLength/2; }
+   .face-top, .face-bottom { left:0; right:0; height:$faceLength; @include transform(translateZ(-$faceLength/2) rotateX(90deg)); }
+   .face-top    { top:-$faceLength/2; }
+   .face-bottom { bottom:-$faceLength/2; }
+   .face-back { top:0; bottom:0; left:0; right:0; background-color:#f1f1f1; @include transform(translateZ(-$faceLength/2)); }
+}
+
+// user pane styles
+.user-profile { 
+    @extend .border-box; 
+    -webkit-transform-style:preserve-3d; 
+       -moz-transform-style:preserve-3d; 
+            transform-style:preserve-3d; 
+    width:100%; height:350px; 
+    text-align:center; 
+    position:absolute; top:0; z-index:2; 
+    padding:15px; 
+
+    h2 { margin-bottom:0; text-transform:uppercase; font:bold 18px 'Helvetica Neue', Arial; color:#333; }
+    .img { 
+        width:110px; height:110px; margin:12px auto 0;
+        padding:5px; border:1px solid #ddd; 
+        border-radius:100%; overflow:hidden; 
+        img { max-width:100%; border-radius:100%; }
+    }
+    address { color:#999; font-size:14px; font-style:normal; }
+    .bio { 
+        color:#999; font-size:13px; 
+        margin:25px -15px 0 -15px; padding:20px 25px;
+        background:white;
+        border:1px solid #eee;
+        border-left:none; border-right:none;
+    }
+    .date {
+        padding:.4em .6em;
+        color:#999; font-size:10px; 
+        position:absolute; top:17px; left:17px;
+        border:1px solid #eee; border-radius:2px;
+    }
+
+    // -webkit-transform:rotateY(40deg) !important;
+}
+
+.tools { 
+    display:block; z-index:1;
+    .icon-pencil, 
+    .icon-trashcan, 
+    .icon-arrow-left { 
+        display:inline-block; cursor:pointer; 
+        font-size:15px; text-decoration:none; 
+        padding:4px 5px; 
+    }
+}
+
+// edit view
+.user-edit { 
+    width:100%; height:350px; 
+    text-align:center; 
+    position:absolute; right:0; z-index:1; 
+
+    padding:25px; 
+
+    button { margin-top:5px; }
+
+    &.hidden { visibility:hidden; }
+    &.shown  { visibility:visible; }
+}
+
+// user creation styles
+.user-create {
+    @extend .user-edit; 
+}
+
+.about-this-demo {
+    $color:black;
+    
+    position:absolute; bottom:10px; left:10px;
+    color:$color; text-decoration:none;
+    
+    &:hover { color:$blue; }
+    
+    // icon
+    &:before {
+        margin-right:7px;
+        width:30px; height:29px; line-height:32px;
+        display:inline-block; vertical-align:middle;
+        font-size:28px; text-align:center; text-indent:-1px;
+        border-radius:100%; border:2px solid $color;
+    }
+}
+// all mobile btns are hidden by default
+.btn-mobile { 
+    display:none !important; 
+}
+.icon-grip { 
+    display:none;
+}
+
+
+// forms styles 
+// ------------------------------------ \
+input, textarea { 
+    @include box-sizing(border-box); 
+    padding:5px; margin-bottom:6px; 
+    color:#666; 
+    border:1px solid #ccc; 
+    box-shadow:inset 0px 1px 1px rgba(0,0,0,.1); 
+    border-radius:3px; 
+    width:100%; 
+}
+textarea { min-height:45px; }
+label { 
+    text-align:left; 
+    display:block; 
+    margin-bottom:2px; 
+}
+
+
+.for-oh-for {
+    text-align:center;
+
+    > span { 
+        font-family:'Helvetica Neue', Arial; 
+        text-transform:uppercase; color:#999; font-size:90px; font-weight:bold; color:rgba(10,10,10,.1); 
+        text-shadow:0px 2px 3px #eee, 0px 0px 0px #ccc, 1px 1px 1px white; 
+    }
+    > p { color:#999; margin:0px 0px 15px; }
+    // > button {  }
+}
+
+
+
+@font-face {
+    font-family:'icons'; 
+    src:url('../fonts/icons/icons.eot'); 
+    src:url('../fonts/icons/icons.eot?#iefix') format('embedded-opentype'), 
+        url('../fonts/icons/icons.woff') format('woff'), 
+        url('../fonts/icons/icons.ttf') format('truetype'), 
+        url('../fonts/icons/icons.svg#icons') format('svg'); 
+    font-weight:normal; 
+    font-style:normal; 
+}
+
+[class*="icon-"]:before { 
+    font-family:'icons';
+    speak:none;
+    font-style:normal;
+    font-weight:normal;
+    font-variant:normal;
+    text-transform:none;
+    line-height:1;
+    vertical-align:middle;
+    -webkit-font-smoothing:antialiased;
+}
+.icon-plus:before         { content:"\e000"; }
+.icon-cross:before        { content:"\e001"; }
+.icon-arrow-right:before  { content:"\e002"; }
+.icon-arrow-left:before   { content:"\e003"; }
+.icon-pencil:before       { content:"\e004"; }
+.icon-wrench:before       { content:"\e005"; }
+.icon-cog:before          { content:"\e006"; }
+.icon-trashcan:before     { content:"\e007"; }
+.icon-eye:before          { content:"\e008"; }
+.icon-pencil-2:before     { content:"\e009"; }
+.icon-grip:before         { content:"\e00a"; }
+
+
+
+// Mixins ------------------------- /
+
+// linear gradient
+@mixin linear-gradient($top, $bottom) {
+  background-image:-webkit-gradient(linear, 0 0, 0 100%, from($top), to($bottom)); 
+  background-image:-moz-linear-gradient($top, $bottom); 
+    background-image:-o-linear-gradient($top, $bottom); 
+       background-image:linear-gradient($top, $bottom); 
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$top}', EndColorStr='#{$bottom}'); 
+}
+
+// css3 transitions
+@mixin transition($params...) {
+  -webkit-transition: $params;
+     -moz-transition: $params;
+      -ms-transition: $params;
+          transition: $params;
+}
+
+// css3 animations
+@mixin animation($params) {
+  -webkit-animation: $params;
+     -moz-animation: $params;
+      -ms-animation: $params;
+          animation: $params;
+}
+
+// css3 transform
+@mixin transform($params...) {
+  -webkit-transform:$params;
+    -moz-transform:$params;
+     -ms-transform:$params;
+         transform:$params;
+}
+
+// clearfix
+@mixin clearfix() {
+  &:before, &:after { content:""; display:table; line-height:0; }
+  &:after { clear:both; }
+}
+
+// opacity
+@mixin opacity($opacity) {
+  $iefix : $opacity*100;
+  opacity: $opacity; 
+  -moz-opacity: $opacity; 
+  filter:alpha(opacity=$iefix);
+}
+
+// box-sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+     -moz-box-sizing: $boxmodel;
+          box-sizing: $boxmodel;
+}
+
+
+
+
+    // ------------
+    // desktop styles reset
+    // ------------
+
+    .main { width:auto; margin:0; -webkit-perspective:none; -moz-perspective:none; }
+    .users-listing { margin:0; width:auto; max-height:none; overflow:visible; border-radius:0; }
+    .user-pane { width:auto; height:auto; position:static; top:auto; right:auto; }
+    .user-profile, .user-edit, .user-create { height:100%; }
+    .pane { border-radius:0; @include animation(none); }
+    [class*="face-"] { display:none; }
+    .btn-desktop { display:none; }
+    .btn-mobile { display:block !important; }
+    .icon-grip { display:block; }
+
+
+    // ------------
+    // now let's apply small screens styles
+    // ------------
+
+    // vars
+    $toolsHeight: 45px;
+
+    .main { overflow:hidden; }
+
+    .tools { 
+        @include box-sizing(border-box);
+        padding:10px 20px; 
+        width:100%; height:$toolsHeight; 
+        background-color:#222; border:4px solid black; border-top:none; 
+    }
+
+    .btn-mobile { display:inline-block; }
+
+    .main > .tools { 
+        position:fixed; top:0; z-index:1; 
+        .create-btn > span { color:white; left:50px; }
+        .users-count { color:white; top:15px; left:auto; right:20px; }
+    }
+    .users-listing { 
+        overflow:scroll; -webkit-overflow-scrolling:touch;
+        height:100%; padding-top:$toolsHeight;
+        li a { border-bottom:3px solid #292929; }
+    }
+
+    .user-pane { 
+        position:absolute; z-index:1; top:0; left:100%;
+        width:100%; height:100%; padding-top:$toolsHeight;
+
+        .tools {
+            position:absolute; top:0; left:0;
+            background-color:lighten($gray,5%);
+            border:none; border-bottom:4px solid $gray;
+
+            button { margin:-3px 0 0 10px; }
+        }
+    }
+    .user-profile {
+        padding-top:$toolsHeight+20;
+        
+        .date {
+            display:inline-block;
+            position:static; margin-top:25px;
+            font-size:12px; background:#f1f1f1; border-color:#ddd;
+        }
+    }
+    .user-edit { 
+        z-index:2; top:0; 
+        padding-top:$toolsHeight+20;
+    }
+    
+    .pane {
+        padding-left:45px; padding-right:45px;
+
+        // can transition if any transform property changes
+        -webkit-transition:-webkit-transform .4s ease;
+           -moz-transition:   -moz-transform .4s ease;
+            -ms-transition:    -ms-transform .4s ease;
+                transition:        transform .4s ease;
+
+        // default positionning is handled in the didInsertElement of the DraggableView.js
+    }
+
+    .mobile-drag-trigger {
+        position:absolute; top:0; left:0;
+        height:100%; width:20px;
+        background-color:#f8f8f8;
+        border-right:1px solid #e9e9e9;
+
+        .icon-grip {
+            position:absolute; top:50%; left:50%;
+            font-size:16px; width:16px; height:16px;
+            margin-left:-4px; //margin-top:-8px;
+        }
+    }
+
+    .confirm-box { top:21px; z-index:1; }
+
+
+
+/*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+audio, canvas, video { display: inline-block; }
+audio:not([controls]) { display: none; height: 0; }
+[hidden] { display: none; }
+html { font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body { margin: 0; }
+a:focus { outline: thin dotted; }
+a:active, a:hover { outline: 0; }
+h1 { font-size: 2em; margin: 0.67em 0; }
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+dfn { font-style: italic; }
+hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
+mark { background: #ff0; color: #000; }
+kbd, pre, samp { font-family: monospace, serif; font-size: 1em; }
+code { background:#eee; border:1px solid #ddd; padding:2px 4px; border-radius:3px; font-family:Monaco, monospace, serif; font-size:.8em; }
+pre { white-space: pre-wrap; }
+q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+small { font-size: 80%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+img { border: 0; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 0; }
+fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+legend { border: 0; padding: 0; }
+button, input, select, textarea { font-family: inherit; font-size: 100%; margin: 0; }button, input { line-height: normal; }
+button, select { text-transform: none; }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
+button[disabled], html input[disabled] { cursor: default; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+
+@import "vars";
+@import "mixins";
+@import "normalize";
+@import "forms";
+@import "buttons";
+@import "icons";
+@import "utils";
+@import "types";
+@import "confirm-box";
+@import "for-oh-for";
+@import "modals";
+@import "desktop";
+@import "animations-desktop";
+
+// those are overrides of the main styles but only for small screens ( < 650px )
+@media screen and (max-width:650px) {
+    @import "mobile";
+    @import "animations-mobile";
+}
+
+
+
+body { font:75% Helvetica, Arial, sans-serif; overflow-y:scroll; background-color:#f1f1f1; }
+i { font-style:normal; }
+h3 { margin:0 0 10px 0; text-align:left; text-transform:uppercase; }
+hr { border:none; border-bottom:1px solid #eee; margin:15px 0; }
+
+
+// could be usefull
+//.hidden { display: none !important; visibility: hidden; }
+.invisible { visibility: hidden; }
+.fleft { float:left; }
+.fright { float:right; }
+.upper { text-transform:uppercase; }
+.bold { font-weight:bold; }
+.aleft { text-align:left; }
+.aright { text-align:right; }
+.acenter { text-align:center; }
+.unselectable { 
+     -webkit-user-select:none;
+        -moz-user-select:none;
+         -ms-user-select:none;
+             user-select:none;
+}
+.line { @include clearfix(); }
+

@@ -1,0 +1,16 @@
+
+<div class="user-edit">
+  <label>Choose user avatar</label>
+  {{input value=model.avatarUrl}}
+
+  <label>User name</label>
+  {{input value=model.name}}
+
+  <label>User email</label>
+  {{input value=model.email}}
+
+  <label>User short bio</label>
+  {{textarea value=model.bio}}
+<button {{action "save"}}> save </button>
+</div>
+
