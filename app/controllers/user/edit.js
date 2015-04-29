@@ -1,6 +1,6 @@
 import Ember from 'ember';
-Ember.Logger.log('inside Edit controller');
-export default  Ember.Controller.extend({
+
+export default Ember.ObjectController.extend({
   actions: {
     save: function(){
       var user = this.get('model');
@@ -11,4 +11,3 @@ export default  Ember.Controller.extend({
     }
   }
 });
-
