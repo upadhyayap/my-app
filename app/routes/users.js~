@@ -6,7 +6,7 @@ export default Ember.Route.extend({
 
   model: function(){
     Ember.Logger.log('inside Model of users route');
-    return this.store.find('user');
+    return this.store.find();
   }
 });
 

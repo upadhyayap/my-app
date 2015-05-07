@@ -11,6 +11,6 @@
  {{else}}
  <li class="no-users-yet">no users… :(</li>
 {{/each}}
-{{outlet}}
 {{#link-to "users.create" class="create-btn"}} Add user {{/link-to}}
+{{outlet}}
 </ul>

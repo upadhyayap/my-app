@@ -1,0 +1,11 @@
+ import DS from "ember-data";
+ 
+ var user = DS.Model.extend({
+  name         : DS.attr(),
+  email        : DS.attr(),
+  bio          : DS.attr(),
+  avatarUrl    : DS.attr(),
+  creationDate : DS.attr()
+ });
+ 
+ export default user;
